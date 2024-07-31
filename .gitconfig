@@ -1,0 +1,57 @@
+[core]
+	ignorecase = false
+	editor = code --wait
+  longpaths = true
+[web]
+  browser = "chrome"
+[browser "chrome"]
+  path = C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+  ui = auto
+[alias]
+  a = add -A
+  d = diff
+  co = checkout
+  ci = commit
+  cm = commit -m
+  ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+  pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+  st = status
+  br = branch
+  ba = branch -a
+  cp = cherry-pick
+  cpnc = cherry-pick --no-commit
+  rso = remote show origin
+  open = "!hub browse"
+  hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+  llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+  ld = log -p --pretty=format:\"%C(yellow)commit %H%Creset%nAuthor: %C(cyan)%an <%ae>%Creset%nDate: %C(magenta)%ad%Creset%n%n%C(green)%s%Creset%n%b%n\" --date=format:'%Y-%m-%d %H:%M' --word-diff --color
+  fo = fetch origin --prune
+  s = "!f() { git for-each-ref --contains \"$1\" | rg -e remotes/origin/develop; }; f"
+  list = "!git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:blue)%(committerdate:relative)%(color:reset))'"
+[hub]
+	protocol = https
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[user]
+	name = Francesco Boasso
+	email = f.boasso@reply.it
+[safe]
+  directory = C:/Users/FrancescoBoasso/Documents/Git
+[fetch]
+  writeCommitGraph = true
+[difftool "sourcetree"]
+	cmd = "'' "
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[color "diff"]
+	meta = blue
+	frag = cyan
+	old = red
+	new = green
